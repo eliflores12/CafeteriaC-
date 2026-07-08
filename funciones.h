@@ -19,6 +19,7 @@ void mostrarCarrito();
 void modificarCompra();
 void cancelarCompra();
 void generarFactura();
+void BuscarProducto();
 
 // FUNCIONES_H
 #endif 

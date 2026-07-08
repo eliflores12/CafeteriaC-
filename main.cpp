@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
 #include <fstream>
 #include "funciones.h"
 
@@ -8,6 +9,7 @@ using namespace std;
 int main()
 {
     int opcion;
+    SetConsoleOutputCP(CP_UTF8);
 
     // Menu principal estructurado correctamente
     do
@@ -18,7 +20,8 @@ int main()
         cout << "3. Modificar Cantidad de un Producto\n";
         cout << "4. Cancelar Compra (Vaciar Carrito)\n";
         cout << "5. Finalizar Compra y Generar Factura\n";
-        cout << "6. Salir\n";
+        cout << "6. Buscar Producto\n";
+        cout << "7. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
@@ -45,14 +48,18 @@ int main()
             break;
 
         case 6:
-            cout << "Gracias por visitar la cafeteria UCA.\n";
+            BuscarProducto();
+            break;
+
+        case 7:
+            cout << "¡Gracias por visitar la cafeteria UCA!\n";
             break;
 
         default:
-            cout << "Opcion invalida.\n";
+            cout << "Opción invalida.\n";
         }
 
-    } while (opcion != 6);
+    } while (opcion != 7);
 
     return 0;
 }
